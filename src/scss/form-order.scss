@@ -1,0 +1,281 @@
+@mixin text-common () {
+    color: #636363;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.fs-form-order {
+    padding: 0px 0 50px;
+
+    &__button {
+        background-position: 0 -102px !important;
+        vertical-align: middle;
+        min-width: 103px;
+        font-weight: bold;
+        font-size: 13px !important;
+        height: 34px !important;
+        line-height: 34px !important;
+        margin-bottom: 10px;
+
+        span {
+            background-position: 100% -68px !important;
+            height: 34px !important;
+            line-height: 33px !important;
+            width: 230px;
+        }
+
+        &:hover {
+            background-position: 0 -34px !important;
+
+            span {
+                background-position: 100% 0 !important;
+            }
+        }
+    }
+
+    &__input {
+        color: #333333;
+        height: 21px;
+        box-sizing: border-box;
+        font: 13px/21px "Roboto", Arial, Tahoma, Verdana, sans-serif;
+        border: 1px solid #a9a9a9;
+        padding: 0 4px;
+        width: 254px;
+
+        &._short {
+            width: 51px;
+        }
+
+        &._datepick {
+            background: url('../images/icon-datepick.png') no-repeat 99% 1px;
+            padding-right: 20px;
+        }
+    }
+
+    &__select {
+        color: #333333;
+        height: 21px;
+        box-sizing: border-box;
+        font: 13px/21px "Roboto", Arial, Tahoma, Verdana, sans-serif;
+        border: 1px solid #a9a9a9;
+        padding: 0 1px;
+        width: 254px;
+        background: #fff;
+
+        &._empty {
+            color: #999999;
+        }
+
+        option {
+            color: #333333;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+    }
+
+    &__checkbox,
+    &__radio {
+        vertical-align: middle;
+        margin: 0 3px 0 0;
+        position: relative;
+        top: -1px;
+    }
+
+    &__field-title {
+        @include text-common;
+        vertical-align: middle;
+    }
+
+    &__textarea {
+        color: #333333;
+        height: 21px;
+        box-sizing: border-box;
+        font: 13px/21px "Roboto", Arial, Tahoma, Verdana, sans-serif;
+        border: 1px solid #a9a9a9;
+        padding: 1px 4px;
+        width: 445px;
+        height: 85px;
+    }
+
+    &__input,
+    &__select,
+    &__textarea,
+    &__checkbox {
+        &._error {
+            border-color: #da291c;
+        }
+    }
+}
+
+.fs-form-order-errors {
+    display: none;
+
+    &__item {
+        box-sizing: border-box;
+        height: 25px;
+        background: #fff;
+        border: 1px solid #da291c;
+        color: #da291c;
+        line-height: 24px;
+        font-size: 11px;
+        padding: 0 8px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+        }
+
+        &:after {
+            top: 8px;
+            left: -4px;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            z-index: 3;
+            @include rotate(45);
+        }
+
+        &:before {
+            top: 8px;
+            left: -5px;
+            width: 6px;
+            height: 6px;
+            border: 1px solid #da291c;
+            z-index: 2;
+            @include rotate(45);
+        }
+    }
+}
+
+.fs-form-order-header {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 14px 0 16px;
+
+    &__title {
+        margin: 0;
+        font-size: 20px;
+        line-height: 24px;
+        color: #636363;
+        font-weight: normal;
+    }
+
+}
+
+.fs-form-order-block {
+    padding: 14px 0 24px;
+
+    &._controls {
+
+    }
+
+    &__title {
+        @include text-common;
+        font-weight: bold;
+
+        &._required {
+
+            &:after {
+                content: '*';
+                color: #f10000;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    &__row {
+        @include cf;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &__cell {
+        float: left;
+        position: relative;
+
+        &._head {
+            width: 190px;
+        }
+
+        &._field {
+            width: 296px;
+        }
+
+        &._extra {
+
+        }
+
+        &._alone {
+
+        }
+    }
+
+}
+
+
+
+
+.fs-form-order-contents {
+    width: 445px;
+    box-sizing: border-box;
+    border-spacing: 0px;
+
+    &__row {
+        &._head {
+            font-weight: bold;
+        }
+
+        &._body {
+
+        }
+
+        &._total {
+            font-weight: bold;
+        }
+    }
+
+    &__cell {
+        padding: 3px 6px;
+        border-top: 1px solid #a9a9a9;
+
+        &:last-child {
+            border-right: 1px solid #a9a9a9;
+        }
+
+        &:first-child {
+            border-left: 1px solid #a9a9a9;
+        }
+
+        .fs-form-order-contents__row._head & {
+            // padding: 3px 6px;
+        }
+
+        .fs-form-order-contents__row._total & {
+            border: 0;
+            border-top: 1px solid #a9a9a9;
+            padding-top: 13px;
+        }
+
+        &._name {
+
+        }
+
+        &._discount {
+
+        }
+
+        &._count {
+
+        }
+
+        &._price {
+
+        }
+    }
+}

@@ -47,3 +47,9 @@
 		height: 100%;
 	}
 }
+
+@mixin rotate($deg) {
+	-ms-transform: rotate(#{$deg}deg) translateX(0px) scale(1);
+	-webkit-transform: rotate(#{$deg}deg) translateX(0px) scale(1);
+	transform: rotate(#{$deg}deg) translateX(0px) scale(1);
+}
